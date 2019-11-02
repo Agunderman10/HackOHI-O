@@ -1,7 +1,31 @@
 {
-  "accounts": [],
-  "interviews": [],
-  "coder_accounts": [],
-  "company_accounts": [],
-  "projects": []
+  "coder_accounts": [
+    {
+      "coder_id": {},
+      "coder_name": {},
+      "coder_profile_pic": {},
+      "coder_bio": {},
+      "coder_location": {},
+      "coder_email": {}
+    }
+  ],
+  "company_accounts": [
+    {
+      "company_id": {},
+      "company_name": {},
+      "company_logo": {},
+      "company_bio": {},
+      "company_location": {},
+      "company_email": {}
+    }
+  ],
+  "projects": [
+    {
+      "project_id": {},
+      "project_name": {},
+      "project_due_date": {},
+      "project_description": {},
+      "project_company": {}
+    }
+  ]
 }
