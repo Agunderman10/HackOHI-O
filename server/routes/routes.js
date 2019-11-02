@@ -112,7 +112,7 @@ router.post('/projects', (req, res, next) => {
 })
 
 router.get('/projects/:id', (req, res, next) => {
-    console.log('GET Request made to localhost:3000/projects/id')
+    console.log('GET Request made to localhost:3000/projects/' + req.params.id)
 
     const project = db.get('projects').find({ project_id: req.params.id }).value();
 
