@@ -17,7 +17,7 @@ const adapter = new FileSync("db.json")
 const db = low(adapter)
 
 // set database defaults
-db.defaults({ accounts: [], interviews: [] }).write();
+db.defaults({ coder_accounts: [], company_accounts:[], projects: [] }).write();
 
 // define our basic routes we'll need
 router.get('/', (req, res, next) => {
@@ -40,8 +40,12 @@ router.get('/company-profile/:id', (req, res, next) => {
     res.send('This is the route for each company profile.')
 })
 
-router.get('/project-listings/', (req, res, next) => {
-    res.send('This is the route for projects.')
+router.get('/projects/', (req, res, next) => {
+    console.log('GET Request made to localhost:3000/projects')
+
+    var projects = db.get('projects').value()
+
+    res.status(200).send(projects)
 })
 
 router.get('/project/:id', (req, res, next) => {
