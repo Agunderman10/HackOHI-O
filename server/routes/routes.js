@@ -56,6 +56,18 @@ router.get('/company-login', (req, res, next) => {
     res.send('This is the route for companies logging in.')
 })
 
+router.post('/company-login', (req, res, next) => {
+    console.log('POST Request made to localhost:3000/company-login')
+
+    const data = req.body;
+
+    db.set("company_accounts.company_id", req.body.company_id).write()
+
+    db.get("company_accounts").push(req.body.company_accounts).write()
+
+    res.send(req.body)
+})
+
 router.get('/coder-login', (req, res, next) => {
     res.send('This is the route for coders logging in.')
 })
@@ -65,12 +77,22 @@ router.get('/coder-profile/:id', (req, res, next) => {
 })
 
 router.get('/company-profile/:id', (req, res, next) => {
-    res.send('This is the route for each company profile.')
+    console.log('GET Request made to localhost:3000/company-profile/' + req.params.id)
+
+    const company = db.get('company_accounts').find({ company_id: req.params.id }).value();
+
+    if(company) 
+    {
+        res.status(200).send(company)
+    }
+    else
+    {
+        res.status(404).send("Project not found")
+    }
 })
 
 router.get('/projects', (req, res) => {
     console.log('GET Request made to localhost:3000/projects')
-    console.log(db.get('projects').value())
 
     const projects = db.get('projects').value()
 
@@ -89,17 +111,19 @@ router.post('/projects', (req, res, next) => {
     res.send(req.body)
 })
 
-router.get('/project/:id', (req, res, next) => {
-    res.send('This is the route for each individual project.')
-})
+router.get('/projects/:id', (req, res, next) => {
+    console.log('GET Request made to localhost:3000/projects/id')
 
-// GET Request for seeing listings of accounts
-router.get('/accounts', (req, res, next) => {
-    console.log('GET Request made to localhost:3000')
+    const project = db.get('projects').find({ project_id: req.params.id }).value();
 
-    var accounts = db.get('accounts').value()
-
-    res.status(200).send(accounts)
+    if(project)
+    {
+        res.status(200).send(project)
+    }
+    else 
+    {
+        res.status(404).send("Project not found")
+    }
 })
 
 // export our router
