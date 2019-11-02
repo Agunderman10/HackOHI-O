@@ -10,4 +10,4 @@
 * React
 * Javascript
 * Node.js
-* LowDB
+* Lowdb
