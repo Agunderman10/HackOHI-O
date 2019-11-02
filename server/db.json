@@ -1,12 +1,20 @@
 {
   "coder_accounts": [
     {
-      "coder_id": {},
-      "coder_name": {},
-      "coder_profile_pic": {},
-      "coder_bio": {},
-      "coder_location": {},
-      "coder_email": {}
+      "coder_id": "1",
+      "coder_name": "Andrew Gunderman",
+      "coder_profile_pic": "profile_pic",
+      "coder_bio": "I'm a young, hardworking student attending Ohio State University studying Computer Science.",
+      "coder_location": "Columbus, Ohio",
+      "coder_email": "agunderman10@gmail.com"
+    },
+    {
+      "coder_id": "2",
+      "coder_name": "Andrew Gunderman",
+      "coder_profile_pic": "profile_pic",
+      "coder_bio": "I'm a young, hardworking student attending Ohio State University studying Computer Science.",
+      "coder_location": "Columbus, Ohio",
+      "coder_email": "agunderman10@gmail.com"
     }
   ],
   "company_accounts": [

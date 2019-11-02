@@ -72,8 +72,29 @@ router.get('/coder-login', (req, res, next) => {
     res.send('This is the route for coders logging in.')
 })
 
+router.post('/coder-login', (req, res, next) => {
+    console.log('POST Request made to localhost:3000/coder_login')
+
+    db.set("coder_accounts.coder_id", req.body.coder_id).write()
+
+    db.get("coder_accounts").push(req.body.coder_accounts).write()
+
+    res.send(req.body)
+})
+
 router.get('/coder-profile/:id', (req, res, next) => {
-    res.send('This is the route for each coder profile.')
+    console.log('GET Request made to localhost:3000/coder-profile/' + req.params.id)
+
+    const coder = db.get('coder_accounts').find({ coder_id: req.params.id }).value();
+
+    if(coder)
+    {
+        res.status(200).send(coder)
+    }
+    else
+    {
+        res.status(404).send('Coder not found')
+    }
 })
 
 router.get('/company-profile/:id', (req, res, next) => {
@@ -87,7 +108,7 @@ router.get('/company-profile/:id', (req, res, next) => {
     }
     else
     {
-        res.status(404).send("Project not found")
+        res.status(404).send('Company not found')
     }
 })
 
@@ -122,7 +143,7 @@ router.get('/projects/:id', (req, res, next) => {
     }
     else 
     {
-        res.status(404).send("Project not found")
+        res.status(404).send('Project not found')
     }
 })
 
