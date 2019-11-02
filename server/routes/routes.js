@@ -24,17 +24,6 @@ router.get('/', (req, res, next) => {
     res.send('Hello from Routes Folder!')
 })
 
-router.get('/json', (req, res, next) => {
-    const data = {
-        greeting: 'Hello!!'
-    }
-    res.json(data)
-})
-
-router.get('/home', (req, res, next) => {
-    res.send('home')
-})
-
 router.get('/company-login', (req, res, next) => {
     res.send('This is the route for companies logging in.')
 })
