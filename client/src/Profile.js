@@ -21,7 +21,7 @@ function Profile() {
         <p className="image" placeholder="image">{image}</p>
         <h2 className="name">{user.coder_name}</h2>
         <p className="biotext"><b>About Me-</b></p>
-        <p className="bio" >{user.coder_bio}</p>
+        <p className="bio">{user.coder_bio}</p>
         <p className="loctext"><b>I stay in-</b></p>
         <p className="loc">{user.coder_location}</p>
         <p className="emailtext"><b>You can Reach me at-</b></p>

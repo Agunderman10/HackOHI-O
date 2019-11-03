@@ -7,9 +7,7 @@ function App(){
     document.title="CrowdCode"
     return (
       <div className="App">
-
-      <Dashboard/>
-
+      <Dashboard/>    
       </div>
     );
 }
