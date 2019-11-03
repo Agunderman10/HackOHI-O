@@ -48,13 +48,6 @@ db.defaults({
    }).write();
 
 // define our basic routes we'll need
-router.get('/', (req, res, next) => {
-    res.send('Hello from Routes Folder!')
-})
-
-router.get('/company-login', (req, res, next) => {
-    res.send('This is the route for companies logging in.')
-})
 
 router.post('/company-login', (req, res, next) => {
     console.log('POST Request made to localhost:3000/company-login')
@@ -67,10 +60,6 @@ router.post('/company-login', (req, res, next) => {
 
     res.header("Access-Control-Allow-Origin", "*")
     res.send(req.body)
-})
-
-router.get('/coder-login', (req, res, next) => {
-    res.send('This is the route for coders logging in.')
 })
 
 router.post('/coder-login', (req, res, next) => {
