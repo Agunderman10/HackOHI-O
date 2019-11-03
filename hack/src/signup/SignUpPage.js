@@ -29,7 +29,8 @@ class SignupPage extends Component {
                   </div>
 
 
-                  <Route exact path="/" component={SignUpForm}>
+                  <Route exact path="/" >
+                    <SignUpForm goto_projectlistings={this.props.goto_projectlistings}/>
                   </Route>
                   <Route path="/sign-in" component={SignInForm}>
                   </Route>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -8,12 +8,39 @@ import {
 } from "react-router-dom";
 
 import SignUpPage from './signup/SignUpPage.js';
+import ProjectListings from './project_listings/ProjectListings.js';
+import Profile from './profile/UserProfile.js';
+import Submissions from './grade_submissions/SubmissionsForProject.js';
 
-function App() {
-  document.title = "CrowdCode"
+class App extends Component {
+  constructor(props){
+    super(props);
+    // this.link = React.createRef()
+    document.title = "CrowdCode"
+
+  }
+  goto_profile = () => {
+    document.location.href = '/profile';
+  }
+
+  goto_projectlistings = () => {
+    // document.location.href = '/project-listings'
+    return <ProjectListings/>
+  }
+
+  goto_submissions = () => {
+    document.location.href = '/submissions'
+  }
+
+
+  render(){
+
   return (
+
     <Router>
     <div>
+
+    {/* <Link ref={this.link} to='/profile' /> */}
     <section>
       <header className="App-header">
         <strong>CrowdCode</strong>
@@ -46,7 +73,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/coders">
-            <SignUpPage userType={'Coder'} />
+            <SignUpPage goto_projectlistings={this.goto_projectlistings} userType={'Coder'} />
           </Route>
           <Route path="/companies">
             <SignUpPage userType={'Company'} />
@@ -57,14 +84,20 @@ function App() {
           <Route path="/learnmore">
             <Learnmore />
           </Route>
+          <Route path="/profile">
+            <Profile/>
+          </Route>
+          <Route path="/project-listings">
+            <ProjectListings/>
+          </Route>
+          <Route path="/submissions">
+            <Submissions/>
+          </Route>
     </Switch>
     </div>
   </Router>
   );
 }
-
-function Companies() {
-  return <h2>Companies</h2>;
 }
 
 function About() {
@@ -93,5 +126,7 @@ function Home(){
   </section>
   </div>)
 }
+
+
 
 export default App;
