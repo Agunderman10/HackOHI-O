@@ -17,7 +17,7 @@ const adapter = new FileSync("db.json")
 const db = low(adapter)
 
 // set database defaults
-db.defaults({ 
+db.defaults({
     coder_accounts: [
     {
         "coder_id": {},
@@ -50,6 +50,8 @@ db.defaults({
 // define our basic routes we'll need
 
 router.post('/company-login', (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*")
+
     console.log('POST Request made to localhost:3000/company-login')
 
     const data = req.body;
@@ -58,18 +60,19 @@ router.post('/company-login', (req, res, next) => {
 
     db.get("company_accounts").push(req.body.company_accounts).write()
 
-    res.header("Access-Control-Allow-Origin", "*")
+
     res.send(req.body)
 })
 
 router.post('/coder-login', (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*")
     console.log('POST Request made to localhost:3000/coder_login')
 
     db.set("coder_accounts.coder_id", req.body.coder_id).write()
 
     db.get("coder_accounts").push(req.body.coder_accounts).write()
 
-    res.header("Access-Control-Allow-Origin", "*")
+
     res.send(req.body)
 })
 
@@ -95,7 +98,7 @@ router.get('/company-profile/:id', (req, res, next) => {
 
     const company = db.get('company_accounts').find({ company_id: req.params.id }).value();
 
-    if(company) 
+    if(company)
     {
         res.header("Access-Control-Allow-Origin", "*")
         res.status(200).send(company)
@@ -139,7 +142,7 @@ router.get('/projects/:id', (req, res, next) => {
         res.header("Access-Control-Allow-Origin", "*")
         res.status(200).send(project)
     }
-    else 
+    else
     {
         res.header("Access-Control-Allow-Origin", "*")
         res.status(404).send('Project not found')

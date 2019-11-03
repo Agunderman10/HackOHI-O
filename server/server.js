@@ -7,6 +7,10 @@ const bodyParser = require('body-parser');
 // create express application
 const app = express();
 
+var cors = require('cors')
+
+app.use(cors())
+
 // make app use body parser for json
 app.use(bodyParser.json());
 
@@ -19,7 +23,7 @@ const indexRouter = require('./routes/routes.js')
 // make the app use the index router we set above
 app.use('/', indexRouter);
 
-// make app listen on the desired port number 
+// make app listen on the desired port number
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 })
