@@ -1,7 +1,7 @@
 # Hack OHI/O Project
 
 ### Team
-* Kevin Li
+* Kevin Li q
 * Andrew Gunderman
 * Jinze Yuan
 * Salil Monga
