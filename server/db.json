@@ -1,0 +1,62 @@
+{
+  "coder_accounts": [
+    {
+      "coder_id": "1",
+      "coder_name": "Andrew Gunderman",
+      "coder_profile_pic": "profile_pic",
+      "coder_bio": "I'm a young, hardworking student attending Ohio State University studying Computer Science.",
+      "coder_location": "Columbus, Ohio",
+      "coder_email": "agunderman10@gmail.com"
+    },
+    {
+      "coder_id": "2",
+      "coder_name": "Andrew Gunderman",
+      "coder_profile_pic": "profile_pic",
+      "coder_bio": "I'm a young, hardworking student attending Ohio State University studying Computer Science.",
+      "coder_location": "Columbus, Ohio",
+      "coder_email": "agunderman10@gmail.com"
+    }
+  ],
+  "company_accounts": [
+    {
+      "company_id": "1",
+      "company_name": "Microsoft",
+      "company_logo": "Windows.jpg",
+      "company_bio": "We are looking to change the world through creating software and hardware that makes people's lives easier.",
+      "company_location": "Seattle, Washington",
+      "company_email": "team@microsoft.com"
+    },
+    {
+      "company_id": "2",
+      "company_name": "Microsoft",
+      "company_logo": "Windows.jpg",
+      "company_bio": "We are looking to change the world through creating software and hardware that makes people's lives easier.",
+      "company_location": "Seattle, Washington",
+      "company_email": "team@microsoft.com"
+    },
+    {
+      "company_id": "3",
+      "company_name": "Microsoft",
+      "company_logo": "Windows.jpg",
+      "company_bio": "We are looking to change the world through creating software and hardware that makes people's lives easier.",
+      "company_location": "Seattle, Washington",
+      "company_email": "team@microsoft.com"
+    }
+  ],
+  "projects": [
+    {
+      "project_id": "1",
+      "project_name": "Microsoft Visual Studio Bug",
+      "project_due_date": "12/4/2019",
+      "project_description": "Help us find a Visual Studio Bug that won't allow users to login!",
+      "project_company": "Microsoft"
+    },
+    {
+      "project_id": "2",
+      "project_name": "Microsoft Visual Studio Bug",
+      "project_due_date": "12/4/2019",
+      "project_description": "Help us find a Visual Studio Bug that won't allow users to login!",
+      "project_company": "Microsoft"
+    }
+  ]
+}
