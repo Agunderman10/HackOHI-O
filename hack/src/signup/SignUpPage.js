@@ -8,14 +8,11 @@ import SignUpFormCompany from './pages/SignUpFormCompany.js';
 class SignupPage extends Component {
 
   render() {
-    return (
-      <Router basename="/react-auth-ui/">
-
-
-      {(()=> {
-        switch (this.props.userType) {
-          case "Coder":
-          return(
+      let mk;
+          switch (this.props.userType) {
+            case "Coder":
+                mk = (
+                  <Router>
             <div className="App">
               <div className="App__Aside"></div>
               <div className="App__Form">
@@ -36,9 +33,12 @@ class SignupPage extends Component {
                   </Route>
               </div>
               </div>
+              </Router>
           );
+          break;
           case "Company":
-          return (
+          mk = (
+            <Router>
             <div className="App">
               <div className="App__Aside"></div>
               <div className="App__Form">
@@ -57,14 +57,11 @@ class SignupPage extends Component {
                   </Route>
               </div>
               </div>
-          )}
-      })()}
-
-
-      </Router>
-    );
-}
-}
-
-
+              </Router>
+          );
+          break;
+        }
+    
+    return mk;
+  }}
 export default SignupPage;

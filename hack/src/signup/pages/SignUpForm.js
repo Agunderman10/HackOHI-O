@@ -58,12 +58,12 @@ class SignUpForm extends Component {
         "coder_profile_pic":'profile_pic',
         "coder_bio":'Im gay', "coder_location":'Columbus, Ohio', "coder_email": this.state.email }));
 
-        this.props.goto_projectlistings()
+        
 
     }
     render() {
         return (
-          <Router>
+          <div>
           <div id='hidden-links'>
             <Link path='/project-listings' />
             <Link path='/submissions' />
@@ -100,9 +100,8 @@ class SignUpForm extends Component {
             </Route>
 
             </Switch>
-          </Router>
 
-
+</div>
         );
     }
 }

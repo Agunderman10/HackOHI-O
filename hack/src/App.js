@@ -24,8 +24,7 @@ class App extends Component {
   }
 
   goto_projectlistings = () => {
-    // document.location.href = '/project-listings'
-    return <ProjectListings/>
+    document.location.href = '/project-listings'
   }
 
   goto_submissions = () => {

@@ -16,7 +16,7 @@ import ProjectListings from '../project_listings/ProjectListings';
 class UserProfile extends Component {
   render(){
     return (
-        <Router> 
+        <div>
       <div class="text-dark" id="wrapper">
           <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
               <div class="container-fluid d-flex flex-column p-0">
@@ -36,16 +36,16 @@ class UserProfile extends Component {
                               </div>
                               < Link to = "/project-listings" >
                               <li class="nav-item" role="presentation">
-                                  
+
                                   <div><a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-1" role="button"><i class="far fa-list-alt"></i>&nbsp;<span>Project Listings</span></a>
-                                      
+
                                       <div class="collapse"
                                           id="collapse-1">
                                           <div class="bg-white border rounded py-2 collapse-inner">
                                               <h6 class="collapse-header">CUSTOM COMPONENTS:</h6><a class="collapse-item" href="buttons.html">Buttons</a><a class="collapse-item" href="cards.html">Cards</a></div>
                                       </div>
                                   </div>
-                                  
+
                               </li>
                               </Link>
                               <li class="nav-item" role="presentation">
@@ -318,8 +318,7 @@ class UserProfile extends Component {
             <ProjectListings />
         </Route>
         </Switch>
-    </Router>
-
+</div>
       // <script src="assets/js/jquery.min.js"></script>
       // <script src="assets/bootstrap/js/bootstrap.min.js"></script>
       // <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
