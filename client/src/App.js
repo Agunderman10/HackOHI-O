@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
 import Profile from './Profile.js';
-function App() {
-  return (
-    <div className="App">
-    
-          <Profile/>
-      
+import Dashboard from './Dashboard.js';
+function App(){
+
+    document.title="CrowdCode"
+    return (
+      <div className="App">
+
+      <Dashboard/>
+
       </div>
-  );
+    );
 }
 
 export default App;

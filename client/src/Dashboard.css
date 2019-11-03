@@ -1,0 +1,16 @@
+
+.table{
+    position: relative;
+    top: 300px;
+    left:10px;
+    border: .1px solid black;
+    padding: 15px;
+    background-color: #66dac7;
+    box-shadow: 10px 4px 8px 10px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+}
+.text * {
+    background-color: #66dac7;
+
+}
