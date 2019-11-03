@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react';
-import logo from './logo.svg';
+
 import './profile.css';
 function Profile() {
   const [user,setUser]= useState({});
@@ -13,7 +13,6 @@ function Profile() {
     console.log(data);
     setUser(data);
   }
-
   return (    
         <div className="w3-display-container">
           <img src={user.coder_profile_pic} alt="Avatar"/>
