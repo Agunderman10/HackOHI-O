@@ -10,6 +10,7 @@ import {
 import SignUpPage from './signup/SignUpPage.js';
 
 function App() {
+  document.title = "CrowdCode"
   return (
     <Router>
     <div>

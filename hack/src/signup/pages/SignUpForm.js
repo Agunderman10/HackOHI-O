@@ -36,7 +36,21 @@ class SignUpForm extends Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        var response = request.post('http://service.com/upload', {name:this.state.name});
+        var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+        var theUrl = "http://localhost:8080/coder-login";
+        xmlhttp.open("POST", theUrl);
+        xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+        xmlhttp.onreadystatechange = function() {//Call a function when the state changes.
+            if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                alert(xmlhttp.responseText);
+            }
+        }
+
+        xmlhttp.send(JSON.stringify({ "coder_id": '3',
+        "coder_name":this.state.name,
+        "coder_profile_pic":'profile_pic',
+        "coder_bio":'Im gay', "coder_location":'Columbus, Ohio', "coder_email": this.state.email }));
 
     }
 

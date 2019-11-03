@@ -38,8 +38,12 @@ class SignUpForm extends Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        var response = request.post('http://service.com/upload', {name:this.state.name});
-
+        var response = request.post('http://localhost:8080/company-login', {company_id: "5", company_name: this.state.organization_name, company_logo: "company.jpg", company_bio: "Big gay", company_location: "Columbus, Ohio", company_email: this.state.email});
+        if(response == 200){
+          console.log("Login successful for coder");
+        } else if(response == 404) {
+          console.log("Login unsuccessful for coder");
+        }
     }
 
     render() {
