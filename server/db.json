@@ -33,6 +33,14 @@
       "company_bio": "We are looking to change the world through creating software and hardware that makes people's lives easier.",
       "company_location": "Seattle, Washington",
       "company_email": "team@microsoft.com"
+    },
+    {
+      "company_id": "3",
+      "company_name": "Microsoft",
+      "company_logo": "Windows.jpg",
+      "company_bio": "We are looking to change the world through creating software and hardware that makes people's lives easier.",
+      "company_location": "Seattle, Washington",
+      "company_email": "team@microsoft.com"
     }
   ],
   "projects": [

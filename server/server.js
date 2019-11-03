@@ -11,7 +11,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // set port number
-const port = 3000;
+const port = 8080;
 
 // set our router = to the routes.js file in the routes folder
 const indexRouter = require('./routes/routes.js')
