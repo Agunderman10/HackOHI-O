@@ -48,13 +48,6 @@ db.defaults({
    }).write();
 
 // define our basic routes we'll need
-router.get('/', (req, res, next) => {
-    res.send('Hello from Routes Folder!')
-})
-
-router.get('/company-login', (req, res, next) => {
-    res.send('This is the route for companies logging in.')
-})
 
 router.post('/company-login', (req, res, next) => {
     console.log('POST Request made to localhost:3000/company-login')
@@ -65,11 +58,8 @@ router.post('/company-login', (req, res, next) => {
 
     db.get("company_accounts").push(req.body.company_accounts).write()
 
+    res.header("Access-Control-Allow-Origin", "*")
     res.send(req.body)
-})
-
-router.get('/coder-login', (req, res, next) => {
-    res.send('This is the route for coders logging in.')
 })
 
 router.post('/coder-login', (req, res, next) => {
@@ -79,6 +69,7 @@ router.post('/coder-login', (req, res, next) => {
 
     db.get("coder_accounts").push(req.body.coder_accounts).write()
 
+    res.header("Access-Control-Allow-Origin", "*")
     res.send(req.body)
 })
 
@@ -89,10 +80,12 @@ router.get('/coder-profile/:id', (req, res, next) => {
 
     if(coder)
     {
+        res.header("Access-Control-Allow-Origin", "*")
         res.status(200).send(coder)
     }
     else
     {
+        res.header("Access-Control-Allow-Origin", "*")
         res.status(404).send('Coder not found')
     }
 })
@@ -104,10 +97,12 @@ router.get('/company-profile/:id', (req, res, next) => {
 
     if(company) 
     {
+        res.header("Access-Control-Allow-Origin", "*")
         res.status(200).send(company)
     }
     else
     {
+        res.header("Access-Control-Allow-Origin", "*")
         res.status(404).send('Company not found')
     }
 })
@@ -117,6 +112,7 @@ router.get('/projects', (req, res) => {
 
     const projects = db.get('projects').value()
 
+    res.header("Access-Control-Allow-Origin", "*")
     res.status(200).send(projects)
 })
 
@@ -129,6 +125,7 @@ router.post('/projects', (req, res, next) => {
 
     db.get("projects").push(req.body.projects).write()
 
+    res.header("Access-Control-Allow-Origin", "*")
     res.send(req.body)
 })
 
@@ -139,10 +136,12 @@ router.get('/projects/:id', (req, res, next) => {
 
     if(project)
     {
+        res.header("Access-Control-Allow-Origin", "*")
         res.status(200).send(project)
     }
     else 
     {
+        res.header("Access-Control-Allow-Origin", "*")
         res.status(404).send('Project not found')
     }
 })
